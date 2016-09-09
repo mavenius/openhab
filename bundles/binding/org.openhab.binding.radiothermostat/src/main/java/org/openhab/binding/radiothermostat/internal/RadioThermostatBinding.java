@@ -141,6 +141,15 @@ public class RadioThermostatBinding extends AbstractActiveBinding<RadioThermosta
     	case "_last_connection_time":
     		value = new DateTimeType();
     		break;
+		case "humidity":
+			value = status.humidity != null ? new DecimalType(status.humidity) : UnDefType.NULL;
+			break;
+		case "t_humidity":
+			value = status.t_humidity != null ? new DecimalType(status.t_humidity) : UnDefType.NULL;
+			break;
+		case "humidifier_mode":
+			value = status.humidifier_mode != null ? new DecimalType(status.humidifier_mode) : UnDefType.NULL;
+			break;
     	case "_refresh":
     		// do nothing. command signal only.
     		return;
@@ -232,6 +241,12 @@ public class RadioThermostatBinding extends AbstractActiveBinding<RadioThermosta
     	case "tmode":
     		tstat.post_tmode(decimal.intValue());
     		break;
+		case "t_humidity":
+			tstat.post_t_humidity(decimal.doubleValue());
+			break;
+		case "humidifier_mode":
+			tstat.post_humidifier_mode(decimal.intValue());
+			break;
     	case "fstate":
     	case "hold":
     	case "override":

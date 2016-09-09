@@ -127,4 +127,22 @@ public class RadioThermostatHardware {
 		status.a_mode = a_mode;
 		post(status);
 	}
+
+	/**
+	 * Target Humidity: Value is % relative humidity from 0 to 100%
+	 */
+	public void post_t_humidity(Double t_humidity) throws IOException {
+		RadioThermostatStatus status = new RadioThermostatStatus();
+		status.t_humidity = t_humidity;
+		post(status);
+	}
+	
+	/**
+	 * Target Humidifier Mode: 0:Off,1:Run only with heat,2:Run any time (runs fan)
+	 */
+	public void post_humidifier_mode(Integer humidifier_mode) throws IOException {
+		RadioThermostatStatus status = new RadioThermostatStatus();
+		status.humidifier_mode = humidifier_mode;
+		post(status);
+	}
 }

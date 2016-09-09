@@ -54,6 +54,15 @@ public class RadioThermostatStatus {
 	
 	// Fan State: 0:OFF, 1:ON
 	public Integer fstate;
+
+	// Humidity 
+	public Double humidity;
+
+	// Target Humidity
+	public Double t_humidity;
+
+	// Humidifier Mode
+	public Integer humidifier_mode;
 	
 	// Time
 	public RadioThermostatTime time;
@@ -63,7 +72,8 @@ public class RadioThermostatStatus {
 		return "Status [temp=" + temp + ", tmode=" + tmode + ", fmode=" + fmode + ", override=" + override + ", hold="
 				+ hold + ", t_cool=" + t_cool + ", t_heat=" + t_heat + ", it_cool=" + it_cool + ", it_heat=" + it_heat
 				+ ", a_cool=" + a_cool + ", a_heat=" + a_heat + ", a_mode=" + a_mode + ", tstate=" + tstate
-				+ ", fstate=" + fstate + ", time=" + time + "]";
-	}
+				+ ", fstate=" + fstate + ", time=" + time + ", humidity=" + humidity + ", t_humidity=" + t_humidity 
+				+ ", humidifier_mode=" + humidifier_mode + "]";
+	} 
 	
 }
